@@ -15,7 +15,7 @@ const Skills = () => {
   const showSkills = () =>
     mySkills.map((val) => (
       <>
-        <Col md="2">
+        <Col md="2" key={`${val[0]}-1`}>
           <p className={`name ${val[2]}`}>{val[0]}</p>
           <ProgressBar
             className="value"
@@ -25,7 +25,7 @@ const Skills = () => {
           />
           <p className={`detail`}>{val[3]}</p>
         </Col>
-        <Col md="1"></Col>
+        <Col md="1" key={`${val[0]}-2`}></Col>
       </>
     ));
   return (

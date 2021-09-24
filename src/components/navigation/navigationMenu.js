@@ -5,7 +5,7 @@ import iconMail from "../../media/icon-mail.svg";
 
 const NavigationMenu = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="navigation-menu">
+    <Navbar expand="lg" className="navigation-menu">
       <LinkContainer to="/home">
         <Navbar.Brand>
           Digital
@@ -18,18 +18,19 @@ const NavigationMenu = () => {
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav justify activeKey="/home" className="navigation-menu-links">
+          {/*Contacts*/}
           <Nav.Item className="contacts">
             <h3>Contact Me!</h3>
-            <div class="contactList">
-              <a href="#">
+            <address className="contactList">
+              <a href="mailto:luisdanielbarros@protonmail.com">
                 <img src={iconMail} alt="" />
                 <span>luisdanielbarros</span>@protonmail.com
               </a>
-              <a href="#">
+              <a href="tel:+351965458866">
                 <img src={iconPhone} alt="" />
                 <span>96</span>5 458 866
               </a>
-            </div>
+            </address>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>

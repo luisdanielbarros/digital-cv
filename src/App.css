@@ -23,33 +23,41 @@ h6 {
   max-width: inherit;
   border-radius: 50%;
 }
-/*General -> Title*/
-.title {
-}
-/*General -> Subtitle*/
-.subtitle {
-}
-/*General -> Description*/
-.description {
-}
 /*General -> Body*/
 body {
   background-color: white;
+  overflow: hidden;
 }
 /*----------------------------------------------------------------*/
+/*Bootstrap Fixes*/
+.container,
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*----------------------------------------------------------------*/
+/*Z-Index Sheet
+0 - 3D Scenes
+2 - Navigation Menu
+3 - Navigation Buttons
+4 - Toasts
+*/
+/*----------------------------------------------------------------*/
 /*Animations*/
-@keyframes contactMe {
+/*Contact Me Animation*/
+@keyframes contactMeAnim {
   0% {
-    transform: scale(1.125);
+    transform: scale(1.03125);
   }
   50% {
-    transform: scale(1.25);
+    transform: scale(1.0625);
   }
   100% {
-    transform: scale(1.125);
+    transform: scale(1.03125);
   }
 }
-@keyframes aboutMe {
+/*About Me Animation*/
+@keyframes aboutMeAnim {
   0% {
     transform: rotate(-22.5deg);
   }
@@ -60,7 +68,8 @@ body {
     transform: rotate(-22.5deg);
   }
 }
-@keyframes skillList {
+/*Skill List Animation*/
+@keyframes skillListAnim {
   0% {
     transform: rotate(-11.25deg);
   }
@@ -71,7 +80,7 @@ body {
     transform: rotate(-11.25deg);
   }
 }
-@keyframes skillListWish {
+@keyframes skillListWishAnim {
   0% {
     transform: scale(1.25);
   }
@@ -82,6 +91,34 @@ body {
     transform: scale(1.25);
   }
 }
+/*Toast Animation*/
+@keyframes toastAnim {
+  0% {
+    transform: scale(1.03125);
+  }
+  50% {
+    transform: scale(1.0625);
+  }
+  100% {
+    transform: scale(1.03125);
+  }
+}
+/*Navigation Button Animation*/
+@keyframes navigationButtonAnim {
+  0% {
+    transform: scale(1.03125);
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.0625);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: scale(1.03125);
+    transform: rotate(-45deg);
+  }
+}
+/*Animation Attribution*/
 .contacts h3,
 .main-aboutme > *,
 .main-skills .skill-list > *,
@@ -90,16 +127,16 @@ body {
   animation-duration: 4s;
 }
 .contacts h3 {
-  animation-name: contactMe;
+  animation-name: contactMeAnim;
 }
 .main-aboutme > * {
-  animation-name: aboutMe;
+  animation-name: aboutMeAnim;
 }
 .main-skills .skill-list > * {
-  animation-name: skillList;
+  animation-name: skillListAnim;
 }
 .main-skills .wish {
-  animation-name: skillListWish;
+  animation-name: skillListWishAnim;
   animation-duration: 2s;
 }
 /*----------------------------------------------------------------*/
@@ -113,13 +150,13 @@ body {
 }
 /*Navigation Menu -> brand*/
 .navbar-brand {
-  color: white !important;
+  color: #66cdaa !important;
   margin: 0 0 0 2rem;
   padding: 0 1rem;
   font-family: "Roboto Mono", monospace;
 }
 .navbar-brand span {
-  color: white;
+  color: #66cdaa;
   font-size: 1.5em;
   font-family: "Roboto Mono", monospace;
   line-height: 1rem;
@@ -137,13 +174,13 @@ body {
   display: flex;
 }
 .navigation-menu-links .nav-item .nav-link {
-  color: white !important;
+  color: #202020 !important;
   align-self: center;
   justify-content: center;
   position: relative;
 }
 .navigation-menu-links .nav-item .nav-link span {
-  color: white;
+  color: #202020;
   font-size: 0.75em;
   position: absolute;
   display: block;
@@ -152,7 +189,7 @@ body {
 }
 .navigation-menu-links .nav-item .nav-link:hover,
 .navigation-menu-links .nav-item .nav-link:hover span {
-  color: white;
+  color: #66cdaa !important;
 }
 /*----------------------------------------------------------------*/
 /*Contacts*/
@@ -176,26 +213,138 @@ body {
 .contactList a {
   text-decoration: none;
   font-size: 0.75rem;
+  display: flex;
+  align-items: center;
 }
 .contactList a img {
-  display: inline-block;
   height: 1.5rem;
   width: auto;
-  filter: invert(100%);
   margin-right: 0.5em;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
 }
 .contactList a span {
   font-size: 1rem;
 }
 .contactList a,
 .contactList a span {
-  color: white;
+  color: #202020;
   font-family: "Roboto Mono", monospace;
   transition: 0.5s ease-in-out;
 }
 .contactList a:hover,
 .contactList a:hover span {
   color: #66cdaa;
+}
+.contactList a:hover img {
+  background-color: #66cdaa;
+}
+/*----------------------------------------------------------------*/
+/*Navigation Buttons*/
+.navigationButtons {
+  position: absolute;
+  z-index: 3;
+  bottom: 1rem;
+  right: 1rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.navigationButtons button {
+  pointer-events: auto;
+  background-color: #66cdaa;
+  border: none;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  padding: 1.5rem 1rem;
+  font-size: 1.5rem;
+  font-family: "Roboto Mono", monospace;
+  animation-name: navigationButtonAnim;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+}
+.navigationButtons button:hover,
+.navigationButtons button:active,
+.navigationButtons button:focus {
+  background-color: #66cdaa;
+  box-shadow: none;
+  filter: brightness(125%);
+}
+/*----------------------------------------------------------------*/
+/*CGI*/
+.cgi {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+.cgi > div {
+  max-height: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+/*----------------------------------------------------------------*/
+/*Toasts*/
+.myToasts {
+  position: absolute;
+  z-index: 4;
+  top: 1rem;
+  right: 1rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.myToasts .toast {
+  pointer-events: auto;
+  animation-name: toastAnim;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+.myToasts .toast,
+.myToasts .toast .toast-header {
+  background-color: #202020;
+}
+.myToasts .toast * {
+  font-family: "Roboto Mono", monospace;
+}
+/*Toasts -> Body*/
+.myToasts .toast .toast-body {
+  color: white !important;
+  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  font-size: 0.75rem;
+}
+/*Toasts -> Header*/
+.myToasts .toast .toast-header {
+  padding: 0.25rem;
+}
+/*Toasts -> Header -> Button*/
+.myToasts .toast .toast-header button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 !important;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.myToasts .toast .toast-header button span:first-child {
+  font-size: 3em;
+  padding: 0 0.25rem 0 0.5rem;
+}
+.myToasts .toast .toast-header button span {
+  transition: 0.5s ease-in-out;
+}
+.myToasts .toast .toast-header button:hover span {
+  filter: brightness(125%);
 }
 /*----------------------------------------------------------------*/
 /*Main -> Children*/
@@ -211,22 +360,18 @@ body {
   max-height: 50vh;*/
   margin: 12rem 0;
 }
-/*Main -> Span*/
+/*General Titles & Main -> Span*/
 .main span,
 .main .title,
 .main-aboutme h3,
-.main-skills h3 {
+.main-skills h3,
+.next .title,
+.next span {
   margin: 0;
   padding: 0;
   font-family: "Roboto Mono", monospace;
   font-size: 2em;
   color: #66cdaa;
-}
-/*Main -> Profile -> Graphics*/
-.main-profile-graphics {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 /*Main -> Profile -> Content*/
 .main-profile-content {
@@ -235,9 +380,14 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   position: relative;
+  pointer-events: none;
 }
 /*Main -> Profile -> Introduction*/
-.main-profile-introduction {
+.main-profile-introduction h2,
+.main-profile-introduction h3,
+.main-profile-introduction p {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0 1rem !important;
 }
 /*Main -> Profile -> Experience*/
 .main-profile-experience {
@@ -245,12 +395,18 @@ body {
 .main-profile-experience p {
   text-align: center;
 }
+.main-profile-experience p,
+.main-profile-experience p span {
+  color: #00a0a0;
+  mix-blend-mode: exclusion;
+  font-family: "Roboto Mono", monospace;
+}
 /*Main -> Profile -> Networks*/
 .main-profile-networks {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 1.5rem;
+  bottom: 0;
 }
 .main-profile-networks h3 {
   margin: 0;
@@ -265,6 +421,12 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.25rem;
 }
 .main-profile-networks img {
   display: inline-block;
@@ -425,6 +587,22 @@ body {
   width: auto;
 }
 /*----------------------------------------------------------------*/
+/*Next*/
+.next {
+  min-height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.next-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/*----------------------------------------------------------------*/
 /*Contacts*/
 .contacts {
 }
@@ -443,6 +621,32 @@ body {
 /*----------------------------------------------------------------*/
 /*Mobile*/
 @media only screen and (max-width: 600px) {
+  /*Mobile -> General -> Body*/
+  body {
+    overflow: scroll;
+  }
+  /*----------------------------------------------------------------*/
+  /*Navigation Menu*/
+  .navigation-menu {
+    background-color: rgba(255, 255, 255, 0.875);
+  }
+  /*----------------------------------------------------------------*/
+  /*Contacts*/
+  .contacts {
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+  /*----------------------------------------------------------------*/
+  /*Mobile -> CGI*/
+  .cgi {
+    pointer-events: none;
+  }
+  /*----------------------------------------------------------------*/
+  /*Mobile -> Toasts*/
+  .myToasts {
+    display: none;
+  }
+  /*----------------------------------------------------------------*/
   /*Mobile -> Contacts*/
   .contacts {
     flex-direction: column;
@@ -462,17 +666,31 @@ body {
   .main-skills {
     margin: 3rem 0;
   }
-  /*Mobile -> Main -> Profile*/
-  .main-profile-graphics {
-    margin-bottom: 3rem;
+  /*Mobile -> Main -> Profile -> Experience*/
+  .main-profile-experience {
+    display: flex;
+    flex-direction: column;
   }
-  .main-profile-content {
-    align-items: center;
-    justify-content: center;
+  .main-profile-experience > * {
+    width: 100%;
   }
+  /*Mobile -> Main -> Profile -> Networks*/
   .main-profile-networks {
     position: relative;
     bottom: 0;
+  }
+  .main-profile-networks > .row {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .main-profile-networks > .row > * {
+    width: 100%;
+  }
+  .main-profile-networks > .row a {
+    display: flex;
+    justify-content: center;
   }
   /*Mobile -> Main -> About Me*/
   .main-aboutme h3 {
