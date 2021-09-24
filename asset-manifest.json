@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/digital-cv/static/css/main.012bb03c.chunk.css",
-    "main.js": "/digital-cv/static/js/main.dba6a746.chunk.js",
-    "main.js.map": "/digital-cv/static/js/main.dba6a746.chunk.js.map",
-    "runtime-main.js": "/digital-cv/static/js/runtime-main.9e986c9d.js",
-    "runtime-main.js.map": "/digital-cv/static/js/runtime-main.9e986c9d.js.map",
+    "main.css": "/digital-cv/static/css/main.f4026241.chunk.css",
+    "main.js": "/digital-cv/static/js/main.c14228e2.chunk.js",
+    "main.js.map": "/digital-cv/static/js/main.c14228e2.chunk.js.map",
+    "runtime-main.js": "/digital-cv/static/js/runtime-main.9e43ed03.js",
+    "runtime-main.js.map": "/digital-cv/static/js/runtime-main.9e43ed03.js.map",
     "static/css/2.61b4cb56.chunk.css": "/digital-cv/static/css/2.61b4cb56.chunk.css",
-    "static/js/2.90ff88f7.chunk.js": "/digital-cv/static/js/2.90ff88f7.chunk.js",
-    "static/js/2.90ff88f7.chunk.js.map": "/digital-cv/static/js/2.90ff88f7.chunk.js.map",
-    "static/js/3.07d2f84e.chunk.js": "/digital-cv/static/js/3.07d2f84e.chunk.js",
-    "static/js/3.07d2f84e.chunk.js.map": "/digital-cv/static/js/3.07d2f84e.chunk.js.map",
+    "static/js/2.24cbf979.chunk.js": "/digital-cv/static/js/2.24cbf979.chunk.js",
+    "static/js/2.24cbf979.chunk.js.map": "/digital-cv/static/js/2.24cbf979.chunk.js.map",
+    "static/js/3.c4dc2784.chunk.js": "/digital-cv/static/js/3.c4dc2784.chunk.js",
+    "static/js/3.c4dc2784.chunk.js.map": "/digital-cv/static/js/3.c4dc2784.chunk.js.map",
     "index.html": "/digital-cv/index.html",
     "static/css/2.61b4cb56.chunk.css.map": "/digital-cv/static/css/2.61b4cb56.chunk.css.map",
-    "static/css/main.012bb03c.chunk.css.map": "/digital-cv/static/css/main.012bb03c.chunk.css.map",
-    "static/js/2.90ff88f7.chunk.js.LICENSE.txt": "/digital-cv/static/js/2.90ff88f7.chunk.js.LICENSE.txt",
+    "static/css/main.f4026241.chunk.css.map": "/digital-cv/static/css/main.f4026241.chunk.css.map",
+    "static/js/2.24cbf979.chunk.js.LICENSE.txt": "/digital-cv/static/js/2.24cbf979.chunk.js.LICENSE.txt",
+    "static/media/3d-model-head.68e3dae8.glb": "/digital-cv/static/media/3d-model-head.68e3dae8.glb",
     "static/media/icon-mail.6f0f5e73.svg": "/digital-cv/static/media/icon-mail.6f0f5e73.svg",
     "static/media/icon-phone.5acaf2c8.svg": "/digital-cv/static/media/icon-phone.5acaf2c8.svg",
     "static/media/logo-artstation.64284736.svg": "/digital-cv/static/media/logo-artstation.64284736.svg",
@@ -21,14 +22,13 @@
     "static/media/logo-github.e21209f2.svg": "/digital-cv/static/media/logo-github.e21209f2.svg",
     "static/media/logo-linkedin.171001b5.svg": "/digital-cv/static/media/logo-linkedin.171001b5.svg",
     "static/media/logo-linktree.3622080c.svg": "/digital-cv/static/media/logo-linktree.3622080c.svg",
-    "static/media/logo-unity.d77c8a63.svg": "/digital-cv/static/media/logo-unity.d77c8a63.svg",
-    "static/media/profile-picture.20ee57d1.jpg": "/digital-cv/static/media/profile-picture.20ee57d1.jpg"
+    "static/media/logo-unity.d77c8a63.svg": "/digital-cv/static/media/logo-unity.d77c8a63.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9e986c9d.js",
+    "static/js/runtime-main.9e43ed03.js",
     "static/css/2.61b4cb56.chunk.css",
-    "static/js/2.90ff88f7.chunk.js",
-    "static/css/main.012bb03c.chunk.css",
-    "static/js/main.dba6a746.chunk.js"
+    "static/js/2.24cbf979.chunk.js",
+    "static/css/main.f4026241.chunk.css",
+    "static/js/main.c14228e2.chunk.js"
   ]
 }
